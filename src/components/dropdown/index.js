@@ -76,6 +76,7 @@ export default class Dropdown extends PureComponent {
     ],
 
     useNativeDriver: false,
+    itemStyle: {}
   };
 
   static propTypes = {
@@ -153,6 +154,7 @@ export default class Dropdown extends PureComponent {
     supportedOrientations: PropTypes.arrayOf(PropTypes.string),
 
     useNativeDriver: PropTypes.bool,
+    itemStyle: PropTypes.object
   };
 
   constructor(props) {
@@ -629,7 +631,7 @@ export default class Dropdown extends PureComponent {
     ];
 
     return (
-      <DropdownItem index={index} {...props}>
+      <DropdownItem index={index} {...props} style={this.props.itemStyle}>
         <Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={1}>
           {title}
         </Text>
